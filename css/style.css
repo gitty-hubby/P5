@@ -3,7 +3,9 @@ html {
 }
 
 body { 
-	height: 100%; margin: 0; padding: 0;
+	height: 100%; 
+    margin: 0; 
+    padding: 0;
     font-family: sans-serif;
     
 }
@@ -24,15 +26,13 @@ body {
 }
 
 .list {
-  
 	overflow: auto;
-	}
+    height: 250px;
+}
 
 .list ul {
     padding: 5px;
-    height: 250px;
     list-style : none;
-
 }
 .list ul li {
     padding: 5px 0;
