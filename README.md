@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
-# P5
->>>>>>> origin/master
+
 #Project 5:  Neighborhood Map
 
 ##About
@@ -20,8 +17,4 @@ On click marker pull image from Flickr API and display them in popup window.
 - https://www.flickr.com/services/api/explore/flickr.photos.search
 - https://developers.google.com/maps/documentation/javascript/tutorial
 - http://knockoutjs.com/documentation/introduction.html
-<<<<<<< HEAD
 - http://stackoverflow.com/questions/22052674/google-places-api-city-or-zipcode
-=======
-- http://stackoverflow.com/questions/22052674/google-places-api-city-or-zipcode
->>>>>>> origin/master
