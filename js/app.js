@@ -72,7 +72,7 @@ var Places = function () {
         // search  
         appData.keyword.subscribe(function (newValue) {
             self.hideAllInfoWindows();
-             // iterate through places and find matches        
+             // iterate through places and find matches
             var i = 0;
             for (i; i < appData.places().length; i += 1) {
                 if (appData.places()[i].name.toLowerCase().indexOf(newValue.toLowerCase()) > -1) {
@@ -202,7 +202,7 @@ var appData = new AppData();
 var places = new Places();
 
 
-// custom binding to get default google coordinates and DOM element   
+// custom binding to get default google coordinates and DOM element
 ko.bindingHandlers.googlemap = {
     init: function (element, valueAccessor) {
         'use strict';

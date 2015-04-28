@@ -15,49 +15,25 @@
 </head>
 
 <body>
-     <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-      <form>
-                <label for="search">Filter list:</label>    
-                <input type="text" name="search" data-bind="textInput:keyword">
-      </form>
-<!--
-      <ul class="nav navmenu-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
--->
-        <ul  class="nav navmenu-nav" data-bind="foreach: places">
+    <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+        <form role="form">
+            <label for="search">Filter list:</label>    
+            <input type="text" name="search" data-bind="textInput:keyword">
+        </form>
+        <ul class="nav navmenu-nav" data-bind="foreach: places">
             <li data-bind="text: name, visible: display, click: $parent.showDetail"></li>
         </ul>     
     </nav>
     <div class="navbar navbar-default navbar-fixed-top">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand pull-right" href="#">Neighbourhood Map Project</a>  
     </div>
     
-   <!-- <div id="panel">
-        <div class="form">
-            <form>
-                <label for="search">Filter list:</label>    
-                <input type="text" name="search" data-bind="textInput:keyword">
-            </form>
-            <hr>
-        </div>  
-        <div class="list">    
-            <ul data-bind="foreach: places">
-                <li data-bind="text: name, visible: display, click: $parent.showDetail"></li>
-            </ul>
-        </div>
-    </div>-->
-    
-   <!-- <div class="slide-btn">[+]</div>    -->
-   
     <div class="map" data-bind="googlemap: { centerLat:  40.3971442, centerLon: -74.0809218  }"></div>
-    
        
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="js/lib/knockout-3.3.0.js"></script>
