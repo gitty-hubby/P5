@@ -8,7 +8,9 @@ var AppData = function () {
     self.mapCoord = {centerLat : ko.observable(), centerLon : ko.observable()}; // initial map coordinates populated from DOM attributes
     self.showDetail = function () {
         google.maps.event.trigger(this, 'click', true);
-        
+        // hided slide-in menu
+        $('#myNavmenu').offcanvas('hide'); 
+
     }; // marker popup function
 };
 
