@@ -18,12 +18,12 @@ Filter park names from 'filter list' form.
 Click on image thumbnails to reveal larger photo.
 
 ##Frameworks and APIs used:
-- jQuery (https://jquery.com/)
-- Knockout.js (http://knockoutjs.com/)
-- Google Maps API (https://www.google.com/maps)
-- Flickr API (https://www.flickr.com/services/api/)
-- Bootstrap 3 (http://getbootstrap.com/)
-- Jasny Boostrap plugin (http://jasny.github.io/bootstrap/) 
+- [jQuery](https://jquery.com/)
+- [Knockout.js](http://knockoutjs.com/)
+- [Google Maps API](https://www.google.com/maps)
+- [Flickr API](https://www.flickr.com/services/api/)
+- [Bootstrap 3](http://getbootstrap.com/)
+- [Simple Side Bar](http://startbootstrap.com/template-overviews/simple-sidebar/)
 
 
 ##References:

@@ -11,34 +11,29 @@ body {
 }
 
 .map {
-    margin-top : 50px;
-    height : 100%;
+   height : 100%;
     width : 100%;
 }
 
-nav form {
-    margin : 6px;
-    padding : 4px;
-    background-color: #ccc;
-    
+form {
+    display : block;
+    background-color : #959595;
+    padding : 2px;
+    margin : 0;
+    text-align : center;
+    height : 65px;
 }
 
-.navmenu-nav li {
-    padding : 4px;
-    border-bottom : #ccc solid 1px;
-    cursor : pointer;
+form > label {
+    margin : 0;
+    padding : 0;
+    color : #fff;
+    font-size : 12px;
+} 
 
-}
-
-
-.navbar-toggle {
-  float : left;
-  margin-left : 15px;
-}
-
-@media (min-width: 0) {
-  .navbar-toggle {
-    display : block; /* force showing the toggle */
-  }
+#heading {
+    height : 65px;
+    padding: 14px 4px;
+    background-color : #959595;
 }
 

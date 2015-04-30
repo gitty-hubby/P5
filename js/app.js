@@ -8,9 +8,11 @@ var AppData = function () {
     self.mapCoord = {centerLat : ko.observable(), centerLon : ko.observable()}; // initial map coordinates populated from DOM attributes
     self.showDetail = function () {
         google.maps.event.trigger(this, 'click', true);
-        // hided slide-in menu
-        $('#myNavmenu').offcanvas('hide'); 
-
+        // hide menu on click
+        var winWidth = $(window).width();
+        if (winWidth < 768){
+            $("#wrapper").toggleClass("toggled");
+        }
     }; // marker popup function
 };
 
@@ -222,3 +224,15 @@ ko.bindingHandlers.googlemap = {
 // initiate data bindings
 ko.applyBindings(appData);
 
+// resize map when window size changes
+$(window).resize(function () {
+    var h = $(window).height(),
+    offsetTop = 65;
+    $('.map').css('height', (h - offsetTop));
+}).resize();
+
+// toggle menu button script
+$("#menu-toggle").click(function (e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
