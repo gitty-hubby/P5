@@ -26,7 +26,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #ccc;
+    background: rgba(0,0,0,0.6);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -39,8 +39,10 @@
 
 #page-content-wrapper {
     width: 100%;
+    height: 65px;
     position: absolute;
- 
+    z-index: 2000;
+    
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -65,7 +67,7 @@
 }
 
 .sidebar-nav li  {
-    color: #5a5a5a;
+    color: rgba(255,255,255,1);
 }
 
 .sidebar-nav li:hover {
@@ -104,11 +106,11 @@
     }
 
     #page-content-wrapper {
-        position: relative;
+        position: fixed;
     }
 
     #wrapper.toggled #page-content-wrapper {
-        position: relative;
+        /* position: relative;*/
         margin-right: 0;
     }
 }

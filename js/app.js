@@ -8,10 +8,10 @@ var AppData = function () {
     self.mapCoord = {centerLat : ko.observable(), centerLon : ko.observable()}; // initial map coordinates populated from DOM attributes
     self.showDetail = function () {
         google.maps.event.trigger(this, 'click', true);
-        // hide menu on click
+        // hide menu on click on small screen
         var winWidth = $(window).width();
-        if (winWidth < 768){
-            $("#wrapper").toggleClass("toggled");
+        if (winWidth < 768) {
+            $("#wrapper").removeClass("toggled");
         }
     }; // marker popup function
 };
@@ -126,13 +126,41 @@ var Places = function () {
             
             // add marker click listener
             google.maps.event.addListener(marker, 'click', function () {
+                // get window height
+                var wHeight =  $(window).height();
+            
+                    
                 // hide all infowin on the map
                 self.hideAllInfoWindows();
                 // change marker icon to active
                 // bring marker on top
                 marker.setZIndex(google.maps.Marker.MAX_ZINDEX + 1);
-                // center map in selected point
-                self.map.setCenter(placeLoc);
+               
+                
+                // offset infowindow if browser window hight is smaller than 740
+                if (wHeight < 740) {
+                    // get stale value based on current zoom level
+                    var scale = Math.pow(2, self.map.getZoom()),
+                        //map projection obj
+                        projection = self.map.getProjection(),
+                        // cur pixel position of marker
+                        pixPosition = projection.fromLatLngToPoint(marker.position),
+                        // new position obj 
+                        newPos = new google.maps.Point(
+                            pixPosition.x,
+                            pixPosition.y - (wHeight * 0.35 / scale)
+                        ),
+                         // new offset location
+                        newLoc = projection.fromPointToLatLng(newPos);
+                        // center map in selected point
+                    self.map.setCenter(newLoc);
+                   
+                } else {
+                    // center map in selected point
+                    self.map.setCenter(placeLoc);
+                }
+                
+                          
                 // populate and open infowindow
                 // this is where additional APIs will be called
                 infowindow.setContent('loading...');
@@ -223,13 +251,6 @@ ko.bindingHandlers.googlemap = {
 
 // initiate data bindings
 ko.applyBindings(appData);
-
-// resize map when window size changes
-$(window).resize(function () {
-    var h = $(window).height(),
-    offsetTop = 65;
-    $('.map').css('height', (h - offsetTop));
-}).resize();
 
 // toggle menu button script
 $("#menu-toggle").click(function (e) {

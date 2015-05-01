@@ -15,6 +15,7 @@
 </head>
 
 <body>
+   
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -30,13 +31,15 @@
         </div>
         <!-- Page Content -->
         <div id="page-content-wrapper">
-            <div id="heading">
-                <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Show/Hide List</a>
+            <div class="heading">
+                <a href="#" class="btn btn-default" id="menu-toggle">Show/Hide List</a>
             </div>
-            <div class="map" data-bind="googlemap: { centerLat:  40.3971442, centerLon: -74.0809218  }"></div>
         </div>
     </div>
-   
+    
+    <div class="map" data-bind="googlemap: { centerLat:  40.3971442, centerLon: -74.0809218  }"></div>
+    
+    
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="js/lib/knockout-3.3.0.js"></script>
     <script src="js/lib/jquery.min.js"></script>
